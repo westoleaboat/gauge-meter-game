@@ -74,8 +74,6 @@ while True:
                 else:
                     level += 2
 
-        # if event.type == pygame.time:
-        #     if time.time()
     surface.fill(BG_COLOR)
 
     if start_time:
@@ -84,39 +82,18 @@ while True:
         message = 'M since : ' + str(time_since_enter)
         surface.blit(font.render(message, True, (0, 255, 0)), (20, 20))
 
-       # if time_since_enter > 6000:
-       #     get_to_zero()
-
-        #two_sec = pygame.time.get_ticks() - time_since_enter  
         if time_since_enter % 10 == 1:
-        #if pygame.time.get_ticks() - time_since_enter == 2000: 
             get_to_zero()
-            #level -= 10
-
-
-            #switch=False
-        
-       # c=0
-       # while c<5:
-       #     if time_since_enter > 6000:
-       #         level -= 5
-       #         c=c+1
-
-
-
 
     t = datetime.now()
     hour, minute, second = ((t.hour % 12) * 5 + t.minute // 12), t.minute, t.second
 
     pygame.draw.circle(surface, pygame.Color('darkslategray'), (H_WIDTH, H_HEIGHT), RADIUS)
 
-    #pygame.draw.line(surface, pygame.Color('blue'), (H_WIDTH, H_HEIGHT), get_clock_pos(clock60, second, 'sec'), 10)
     pygame.draw.line(surface, pygame.Color('green'), (H_WIDTH, H_HEIGHT), get_clock_pos(zero10, level, 'level'), 10)
 
-#    surface.blit()
     pygame.display.set_caption(f'LEVEL: {level :.2f}')
     pygame.display.flip()
     clock.tick(60)
 
 
-    #pygame.display.update()
